@@ -1,10 +1,8 @@
 {
   "matin": {
-    "titre": "La Fiole du Graillon",
-    "pitch": "Un vieil apothicaire vend une fiole opaque qui change de couleur à l’aube. Seul celui qui devine sa teinte à l’avance peut l’ouvrir sans risque.",
-    "recompense": "Un philtre donnant accès à une vision prémonitoire",
-    "quartier": "Le Quartier du Graillon",
-    "guide": "Le Guide indique, dans une recette effacée, la couleur précise du contenu un jour par mois."
+    "titre": "$TITRE",
+    "pitch": "$PITCH",
+    "recompense": "$RECOMPENSE",
   },
   "date": "$(date +%Y-%m-%d)"
 }
