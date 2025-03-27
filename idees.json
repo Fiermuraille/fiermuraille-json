@@ -3,6 +3,4 @@
         "titre": "$TITRE",
         "pitch": "$PITCH",
         "recompense": "$RECOMPENSE",
-      },
-      "date": "$(date +%Y-%m-%d)"
     }
