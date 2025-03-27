@@ -5,8 +5,4 @@
         "recompense": "$RECOMPENSE",
       },
       "date": "$(date +%Y-%m-%d)"
-    }' > idees.json
-    cat idees.json # Afficher le fichier modifié pour vérifier
-@@ -1,10 +1,8 @@
-}
- 
+    }
