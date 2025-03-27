@@ -1,8 +1,11 @@
-{
-  "matin": {
-    "titre": "$TITRE",
-    "pitch": "$PITCH",
-    "recompense": "$RECOMPENSE",
-  },
-  "date": "$(date +%Y-%m-%d)"
-}
+- name: Générer une nouvelle idée et modifier le fichier idees.json
+  run: |
+    echo '{
+      "matin": {
+        "titre": "$TITRE",
+        "pitch": "$PITCH",
+        "recompense": "$RECOMPENSE",
+      },
+      "date": "$(date +%Y-%m-%d)"
+    }' > idees.json
+    cat idees.json # Afficher le fichier modifié pour vérifier
