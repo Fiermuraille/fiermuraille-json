@@ -30,8 +30,6 @@ jobs:
               "titre": "$TITRE",
               "pitch": "$PITCH",
               "recompense": "$RECOMPENSE",
-            },
-            "date": "$(date +%Y-%m-%d)"
           }' > idees.json
 
       - name: Commit et push
