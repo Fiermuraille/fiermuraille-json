@@ -1,0 +1,41 @@
+name: Mise à jour quotidienne des idées
+
+on:
+  schedule:
+    - cron: '55 6 * * *' # Tous les jours à 6h55 UTC (~7h heure locale)
+  workflow_dispatch:
+
+jobs:
+  maj-idees:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloner le dépôt
+        uses: actions/checkout@v3
+
+      - name: Générer le fichier idees.json
+        run: |
+          echo '{
+            "matin": {
+              "titre": "Les Murmures du Puits Interdit",
+              "pitch": "Un vieux puits muré se met à gémir certaines nuits. Qui s’en approche entend une voix familière...",
+              "recompense": "Vision d’un passage secret ailleurs en ville",
+              "quartier": "Quartier Vide-Bourse",
+              "guide": "Une carte annotée dans le Guide dévoile quand le puits parle."
+            },
+            "aleatoire": {
+              "titre": "Le Miroir de l’Auberge du Griffon",
+              "pitch": "Un miroir dans une chambre interdite montre autre chose que le reflet. On peut y apercevoir un souvenir... ou un avertissement.",
+              "recompense": "Connaissance précieuse sur un autre PNJ",
+              "quartier": "Le Graillon",
+              "guide": "Un vers dans le Guide suggère comment activer le miroir."
+            },
+            "date": "$(date +%Y-%m-%d)"
+          }' > idees.json
+
+      - name: Commit et push
+        run: |
+          git config user.name "fiermuraille-bot"
+          git config user.email "bot@fiermuraille.local"
+          git add idees.json
+          git commit -m "Mise à jour auto des idées - $(date +%Y-%m-%d)"
+          git push
