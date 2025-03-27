@@ -24,12 +24,18 @@ jobs:
           RECOMPENSE=${RECOMPENSE[$((RANDOM % ${#RECOMPENSE[@]}))]}
 
           # Créer l'idée avec les valeurs aléatoires
-          echo '{
-            "matin": {
-              "titre": "$TITRE",
-              "pitch": "$PITCH",
-              "recompense": "$RECOMPENSE",
-          }' > idees.json
+          echo "{
+            \"matin\": {
+              \"titre\": \"$TITRE\",
+              \"pitch\": \"$PITCH\",
+              \"recompense\": \"$RECOMPENSE\",
+              \"quartier\": \"Quartier Sublime\",
+              \"guide\": \"Sous le banc de pierre près du vieux chêne.\"
+            },
+            \"date\": \"$(date +%Y-%m-%d)\"
+          }" > idees.json
+          
+          cat idees.json # Afficher le fichier modifié pour vérifier
 
       - name: Commit et push
         run: |
