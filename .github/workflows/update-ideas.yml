@@ -2,7 +2,7 @@ name: Mise à jour quotidienne des idées
 
 on:
   schedule:
-    - cron: '00 6 * * *' # Tous les jours à 5h00 UTC = 6h00 heure FR
+    - cron: '00 6 * * *' # Tous les jours à 6h00 UTC = 7h00 heure FR
 
 jobs:
   maj-idees:
