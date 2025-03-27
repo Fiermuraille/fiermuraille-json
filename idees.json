@@ -1,17 +1,10 @@
 {
   "matin": {
-    "titre": "Les Griffes de la Banque Muette",
-    "pitch": "Chaque matin à l’ouverture, la Banque de Fiermuraille perd un sou noir dans ses registres. Si vous le retrouvez avant midi, il vous ‘appartient’… mais il est maudit.",
-    "recompense": "Un sou noir enchanté (utile plus tard dans une autre quête)",
-    "quartier": "Quartier Sublime",
-    "guide": "Un passage du Guide indique où regarder pour retrouver le sou sans se faire repérer."
+    "titre": "La Fiole du Graillon",
+    "pitch": "Un vieil apothicaire vend une fiole opaque qui change de couleur à l’aube. Seul celui qui devine sa teinte à l’avance peut l’ouvrir sans risque.",
+    "recompense": "Un philtre donnant accès à une vision prémonitoire",
+    "quartier": "Le Quartier du Graillon",
+    "guide": "Le Guide indique, dans une recette effacée, la couleur précise du contenu un jour par mois."
   },
-  "aleatoire": {
-    "titre": "La Cravache de Brume",
-    "pitch": "Un marchand du Port vend une cravache en cuir d’hippocampe. Elle ne sert à rien… sauf les nuits de pleine lune, où elle peut dompter des créatures invisibles.",
-    "recompense": "Accès à une monture éphémère dans les canaux cachés",
-    "quartier": "Le Port",
-    "guide": "Un schéma oublié dans le Guide permet d’accéder aux canaux secrets."
-  },
-  "date": "2025-03-27"
+  "date": "$(date +%Y-%m-%d)"
 }
