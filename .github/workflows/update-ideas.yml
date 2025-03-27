@@ -3,7 +3,6 @@ name: Mise à jour quotidienne des idées
 on:
   schedule:
     - cron: '00 6 * * *' # Tous les jours à 5h00 UTC = 6h00 heure FR
-  workflow_dispatch:
 
 jobs:
   maj-idees:
