@@ -1,6 +1,8 @@
 {
-      "matin": {
-        "titre": "$TITRE",
-        "pitch": "$PITCH",
-        "recompense": "$RECOMPENSE",
-    }
+  "matin": {
+    "titre": "$TITRE",
+    "pitch": "$PITCH",
+    "recompense": "$RECOMPENSE",
+  },
+  "date": "$(date +%Y-%m-%d)"
+}
