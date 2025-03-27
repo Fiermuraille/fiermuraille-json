@@ -1,6 +1,4 @@
-- name: Générer une nouvelle idée et modifier le fichier idees.json
-  run: |
-    echo '{
+{
       "matin": {
         "titre": "$TITRE",
         "pitch": "$PITCH",
@@ -9,3 +7,6 @@
       "date": "$(date +%Y-%m-%d)"
     }' > idees.json
     cat idees.json # Afficher le fichier modifié pour vérifier
+@@ -1,10 +1,8 @@
+}
+ 
