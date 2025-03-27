@@ -1,0 +1,34 @@
+name: Mise à jour quotidienne des idées
+
+on:
+  schedule:
+    - cron: '00 6 * * *' # Tous les jours à 6h00 UTC = 7h00 heure FR
+  workflow_dispatch:
+
+jobs:
+  maj-idees:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloner le dépôt
+        uses: actions/checkout@v3
+
+      - name: Générer le fichier idees.json avec une nouvelle idée
+        run: |
+          echo '{
+            "matin": {
+              "titre": "La Fiole du Graillon",
+              "pitch": "Un vieil apothicaire vend une fiole opaque qui change de couleur à l’aube. Seul celui qui devine sa teinte à l’avance peut l’ouvrir sans risque.",
+              "recompense": "Un philtre donnant accès à une vision prémonitoire",
+              "quartier": "Le Quartier du Graillon",
+              "guide": "Le Guide indique, dans une recette effacée, la couleur précise du contenu un jour par mois."
+            },
+            "date": "$(date +%Y-%m-%d)"
+          }' > idees.json
+
+      - name: Commit et push
+        run: |
+          git config user.name "fiermuraille-bot"
+          git config user.email "bot@fiermuraille.local"
+          git add idees.json
+          git commit -m "Mise à jour auto des idées - $(date +%Y-%m-%d)" || echo "Aucun changement"
+          git push
